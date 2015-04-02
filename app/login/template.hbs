@@ -1,5 +1,10 @@
 <h2 id="title">Welcome to Ember.js</h2>
 
+{{#if attrs.errorMsg }}
+<div class="alert alert-error">
+    {{ attrs.errorMsg }}
+</div>
+{{/if}}
 <form {{action 'authenticate' on='submit'}}>
     <label for="identification">Login</label>
     {{input value=identification placeholder='Enter Login'}}

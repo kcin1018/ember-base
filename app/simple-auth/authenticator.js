@@ -19,9 +19,16 @@ export default Base.extend({
                 type: 'POST',
                 data: { identification: credentials.identification, password: credentials.password },
             }).then(function(response) {
-                Ember.run(function() {
-                    resolve({ token: response.token });
-                });
+                var data = JSON.parse(response);
+                if (!Ember.isEmpty(data.token)) {
+                    Ember.run(function() {
+                        reject(data.error);
+                    });
+                } else {
+                    Ember.run(function() {
+                        resolve({ token: data.token });
+                    });
+                }
             }, function(xhr) {//, status, error) {
                 var response = JSON.parse(xhr.responseText);
                 Ember.run(function() {

@@ -5,8 +5,5 @@ export default Ember.Route.extend({
         controller.set('attrs.error', null);
     },
     actions: {
-        authenticate: function(){
-
-        }
     }
 });
