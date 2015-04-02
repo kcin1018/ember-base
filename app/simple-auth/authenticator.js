@@ -18,21 +18,32 @@ export default Base.extend({
                 url: Config['simple-auth'].endpoint,
                 type: 'POST',
                 data: { identification: credentials.identification, password: credentials.password },
+                dataType: 'json'
             }).then(function(response) {
-                var data = JSON.parse(response);
-                if (!Ember.isEmpty(data.token)) {
+                var data;
+                try {
+                    data = JSON.parse(response);
+                } catch(err) {
+                    // error parsing the data
                     Ember.run(function() {
-                        reject(data.error);
-                    });
-                } else {
-                    Ember.run(function() {
-                        resolve({ token: data.token });
+                        reject({message: response, code: 400});
                     });
                 }
-            }, function(xhr) {//, status, error) {
-                var response = JSON.parse(xhr.responseText);
+
+                if (!Ember.isEmpty(data.token)) {
+                    // error no token
+                    Ember.run(function() {
+                        reject({message: data.error, code: 401});
+                    });
+                } else {
+                    // success token exists
+                    Ember.run(function() {
+                        resolve({ token: data.token, code: 200});
+                    });
+                }
+            }, function(xhr, status, error) {
                 Ember.run(function() {
-                    reject(response.error);
+                    reject({message: error, code: 400});
                 });
             });
         });
