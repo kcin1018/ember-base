@@ -7,9 +7,9 @@ export default Ember.Controller.extend(LoginControllerMixin, {
     actions: {
         authenticate: function() {
             var _this = this;
-            this._super().then(null, function(error) {
-                if(error.code === 401){
-                    _this.set('attrs.errorMsg', "The username and/or password is incorrect");
+            this._super().then(null, function(response) {
+                if(response.code === 401){
+                    _this.set('attrs.errorMsg', response.error);
                 } else {
                     _this.set('attrs.errorMsg', "An error occured, please try again");
                 }
