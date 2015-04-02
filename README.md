@@ -14,13 +14,16 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](http://www.ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
 
-## Installation
+## Starting Project based on this
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `ember install`
-* change the config/environment.js file
-  * modulePrefix: '<your-app-name>',
+* Create an empty project and initialize git (`mkdir <app-directory && cd <app-directory> && git init`)
+* Add remote origin to new repo (`git remote add origin <your-new-repo-url>`)
+* Add another remote for ember-base (`git remote add ember-base ssh://git@bmiatlasp.chmcres.cchmc.org:7999/ossdevel/ember-base.git`)
+* Pull in the ember-base into master branch (`git pull ember-base master`)
+* Push initial template to your new repo (`git push --set-upstream origin master`)
+* Setup branch to track changes in ember-base (`git branch ember-base ember-base/master`)
+* Install dependencies for new project (`ember install`)
+* change the config/environment.js file (`modulePrefix: '<app-directory>'`)
 * update app title in app/index.html
 
 ## Running / Development
