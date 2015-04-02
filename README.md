@@ -22,9 +22,10 @@ You will need the following things properly installed on your computer.
 * Pull in the ember-base into master branch (`git pull ember-base master`)
 * Push initial template to your new repo (`git push --set-upstream origin master`)
 * Setup branch to track changes in ember-base (`git branch ember-base ember-base/master`)
-* Install dependencies for new project (`ember install`)
 * change the config/environment.js file (`modulePrefix: '<app-directory>'`)
-* update app title in app/index.html
+* update app title in app/index.html as well as the ember-base assets to <app-directory>
+* update package.json (`"name": "<app-directory>"`)
+* Install dependencies for new project (`ember install`)
 
 ## Running / Development
 
