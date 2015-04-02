@@ -1,11 +1,14 @@
 /* jshint node: true */
-
 module.exports = function(environment) {
     var ENV = {
         modulePrefix: 'ember-base',
         environment: environment,
         baseURL: '/',
         locationType: 'auto',
+        'simple-auth': {
+            authorizer: 'authorizer:custom',
+            store: 'simple-auth-session-store:local-storage'
+        },
         EmberENV: {
             FEATURES: {
                 // Here you can enable experimental features on an ember canary build

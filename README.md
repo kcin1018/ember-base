@@ -1,7 +1,8 @@
 # Ember-base
 
 This is the base Ember CLI frontend app for CCHMC.  It has bootstrap CSS/JS framework, moment.js,
-and bootstrap datetimepicker included by default.
+and bootstrap datetimepicker included by default.  It also includes ember-simple-auth for
+authentication and authorization.
 
 ## Prerequisites
 
@@ -17,8 +18,10 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * change into the new directory
-* `npm install`
-* `bower install`
+* `ember install`
+* change the config/environment.js file
+  * modulePrefix: '<your-app-name>',
+* update app title in app/index.html
 
 ## Running / Development
 
