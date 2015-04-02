@@ -20,17 +20,10 @@ export default Base.extend({
                 data: { identification: credentials.identification, password: credentials.password },
                 dataType: 'json'
             }).then(function(response) {
-                var data;
-                try {
-                    data = JSON.parse(response);
-                } catch(err) {
-                    // error parsing the data
-                    Ember.run(function() {
-                        reject({message: response, code: 400});
-                    });
-                }
+                var data = JSON.parse(response);
 
                 if (!Ember.isEmpty(data.token)) {
+                    console.log('EMPTY:', {message: data.error, code: 401});
                     // error no token
                     Ember.run(function() {
                         reject({message: data.error, code: 401});
@@ -42,6 +35,7 @@ export default Base.extend({
                     });
                 }
             }, function(xhr, status, error) {
+                console.log('ERROR:', {message: error, code: 400});
                 Ember.run(function() {
                     reject({message: error, code: 400});
                 });
