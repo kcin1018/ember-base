@@ -7,7 +7,8 @@ module.exports = function(environment) {
         locationType: 'auto',
         'simple-auth': {
             authorizer: 'authorizer:custom',
-            store: 'simple-auth-session-store:local-storage'
+            store: 'simple-auth-session-store:local-storage',
+            endpoint: 'api/v1/auth',
         },
         EmberENV: {
             FEATURES: {

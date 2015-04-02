@@ -1,8 +1,8 @@
 import Ember from 'ember';
 import Base from 'simple-auth/authenticators/base';
+import Config from '../config/environment';
 
 export default Base.extend({
-    tokenEndpoint: 'api/v1/auth',
     restore: function(data) {
         return new Ember.RSVP.Promise(function(resolve, reject) {
             if (!Ember.isEmpty(data.token)) {
@@ -13,16 +13,14 @@ export default Base.extend({
         });
     },
     authenticate: function(credentials) {
-        var _this = this;
-
         return new Ember.RSVP.Promise(function(resolve, reject) {
             Ember.$.ajax({
-                url: _this.tokenEndpoint,
+                url: Config['simple-auth'].endpoint,
                 type: 'POST',
                 data: { identification: credentials.identification, password: credentials.password },
             }).then(function(response) {
                 Ember.run(function() {
-                    resolve({ token: response.session.token });
+                    resolve({ token: response.token });
                 });
             }, function(xhr) {//, status, error) {
                 var response = JSON.parse(xhr.responseText);
@@ -33,9 +31,8 @@ export default Base.extend({
         });
     },
     invalidate: function() {
-        var _this = this;
         return new Ember.RSVP.Promise(function(resolve) {
-            Ember.$.ajax({ url: _this.tokenEndpoint, type: 'DELETE' }).always(function() {
+            Ember.$.ajax({ url: Config['simple-auth'].endpoint, type: 'DELETE' }).always(function() {
                 resolve();
             });
         });
