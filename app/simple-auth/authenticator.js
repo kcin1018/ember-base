@@ -1,11 +1,12 @@
 import Ember from 'ember';
 import Base from 'simple-auth/authenticators/base';
-import Config from '../config/environment';
+import Config from 'ember-base/config/environment';
 
 export default Base.extend({
     restore: function(data) {
         return new Ember.RSVP.Promise(function(resolve, reject) {
-            if (!Ember.isEmpty(data.token)) {
+            var now = moment().format('x');
+            if (!Ember.isEmpty(data.token) && now <= data.logoutTime) {
                 resolve(data);
             } else {
                 reject();
@@ -23,7 +24,7 @@ export default Base.extend({
                 if (!Ember.isEmpty(response.token)) {
                     // success token exists
                     Ember.run(function() {
-                        resolve({token: response.token});
+                        resolve({token: response.token, user_id: response.user_id});
                     });
                 } else {
                     // error no token
