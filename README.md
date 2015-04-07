@@ -21,10 +21,12 @@ You will need the following things properly installed on your computer.
 * Add another remote for ember-base (`git remote add ember-base ssh://git@bmiatlasp.chmcres.cchmc.org:7999/ossdevel/ember-base.git`)
 * Pull in the ember-base into master branch (`git pull ember-base master`)
 * Push initial template to your new repo (`git push --set-upstream origin master`)
-* Setup branch to track changes in ember-base (`git branch ember-base ember-base/master`)
+* Remove ember-base (`git branch -d ember-base`)
+* Remove ember-base remote (`git remote remove ember-base`)
 * change the config/environment.js file (`modulePrefix: '<app-directory>'`)
-* update app title in app/index.html as well as the ember-base assets to <app-directory>
+* update app title in app/index.html as well as the ember-base assets to `<app-directory>`
 * update package.json (`"name": "<app-directory>"`)
+* update bower.json (`"name": "<app-directory>"`)
 * Install dependencies for new project (`ember install`)
 
 ## Running / Development
