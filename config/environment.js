@@ -1,7 +1,7 @@
 /* jshint node: true */
 module.exports = function(environment) {
     var ENV = {
-        sessionLogoutTime: 30; // auto logout time in minutes
+        sessionLogoutTime: 30, // auto logout time in minutes
         modulePrefix: 'ember-base',
         environment: environment,
         baseURL: '/',
