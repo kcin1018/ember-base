@@ -22,10 +22,8 @@ You will need the following things properly installed on your computer.
 * Pull in the ember-base into master branch (`git pull ember-base master`)
 * Push initial template to your new repo (`git push --set-upstream origin master`)
 * Remove ember-base remote (`git remote remove ember-base`)
-* change the config/environment.js file (`modulePrefix: '<app-directory>'`)
-* update app title in app/index.html as well as the ember-base assets to `<app-directory>`
-* update package.json (`"name": "<app-directory>"`)
-* update bower.json (`"name": "<app-directory>"`)
+* rename all instances of the namespace (`grep -r -l 'ember-base' * | xargs sed -i.old 's/ember-base/<app-directory>/g'`)
+* remove all of the `.old` files (`find . -name '*.old' -exec rm {} \;`)
 * Install dependencies for new project (`npm install && bower install`)
 
 ## Running / Development
