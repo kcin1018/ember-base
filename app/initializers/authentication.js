@@ -1,5 +1,8 @@
 import CustomAuthorizer from 'ember-base/simple-auth/authorizer';
 import CustomAuthenticator from 'ember-base/simple-auth/authenticator';
+import Session from 'simple-auth/session';
+import Ember from 'ember';
+import Config from 'repository/config/environment';
 
 export default {
     name:       'authentication',
@@ -9,12 +12,11 @@ export default {
         container.register('authenticator:custom', CustomAuthenticator);
 
         Session.reopen({
-            setLogoutTime: function() {
-                this.set('logoutTime', moment().add(Config.sessionLogoutTime, 'm').format('x'));
-            }.observes('token'),
             setCurrentUser: function() {
                 var id = this.get("user_id");
                 var self = this;
+
+                this.set('logoutTime', moment().add(Config.sessionLogoutTime, 'm').format('x'));
 
                 if (!Ember.isEmpty(id)) {
                     return container.lookup("store:main").find("user", id).then(function(user) {

@@ -7,9 +7,23 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
             var session = this.get('session');
             var logoutTime = session.get('logoutTime');
             var now = moment().format('x');
+            var currentUser = session.get('currentUser');
 
-            if(now >= logoutTime || !session.get('currentUser').is_active) {
-                this.controllerFor('login').set('attrs.autologout', true);
+            if(currentUser && typeof currentUser.username === 'object') {
+                // check the is_active from the current user id
+                this.store.fetchById('user', this.get('session.content.user_id')).then(function(user){
+                    currentUser.set('is_active', user.get('is_active'));
+                });
+            }
+
+            if(now >= logoutTime) {
+                // logout due to inactivity
+                this.controllerFor('login').set('attrs.auto_logout', 'You have been auto logged out after ' + Config.get('sessionLogoutTime') + ' minutes.');
+                this.send('invalidateSession');
+                this.transitionTo('login');
+            } else if(currentUser && typeof currentUser.username === 'object' && !currentUser.get('is_active')) {
+                // logout due to not being active
+                this.controllerFor('login').set('attrs.auto_logout', 'Your account has been disabled.');
                 this.send('invalidateSession');
                 this.transitionTo('login');
             } else if(logoutTime) {
