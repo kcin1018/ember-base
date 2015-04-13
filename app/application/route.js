@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 import Configuration from 'simple-auth/configuration';
-import Config from 'repository/config/environment';
+import Config from 'ember-base/config/environment';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
     actions: {

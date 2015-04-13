@@ -2,7 +2,7 @@ import CustomAuthorizer from 'ember-base/simple-auth/authorizer';
 import CustomAuthenticator from 'ember-base/simple-auth/authenticator';
 import Session from 'simple-auth/session';
 import Ember from 'ember';
-import Config from 'repository/config/environment';
+import Config from 'ember-base/config/environment';
 
 export default {
     name:       'authentication',
