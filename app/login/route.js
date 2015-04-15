@@ -9,7 +9,7 @@ export default Ember.Route.extend({
             var message = this.controller.get('attrs.auto_logout');
             if(message) {
                 this.get('session').invalidate();
-                this.controller.set('attrs.errorMsg', message);
+                this.notify.alert(message);
             }
         }
     }

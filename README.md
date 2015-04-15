@@ -23,7 +23,9 @@ You will need the following things properly installed on your computer.
 * Remove ember-base remote (`git remote remove ember-base`)
 * rename all instances of the namespace (`grep -r -l 'ember-base' * | xargs sed -i.old 's/ember-base/<app-directory>/g'`)
 * remove all of the `.old` files (`find . -name '*.old' -exec rm {} \;`)
+* Commit changes to the new repository for the starting point (`git commit -am  "Base Ember.js app based on ember-base"`)
 * Push initial template to your new repo (`git push --set-upstream origin master`)
+    * You will need to use `--force` if you want to overwrite the git repo code.
 * Install dependencies for new project (`npm install && bower install`)
 
 ## Running / Development

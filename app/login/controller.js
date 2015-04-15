@@ -9,9 +9,9 @@ export default Ember.Controller.extend(LoginControllerMixin, {
             var _this = this;
             this._super().then(null, function(response) {
                 if(response.code === 401){
-                    _this.set('attrs.errorMsg', response.error);
+                    _this.notify.alert(response.error);
                 } else {
-                    _this.set('attrs.errorMsg', "An error occured, please try again");
+                    _this.notify.alert('An error occured, please try again');
                 }
             });
         }
