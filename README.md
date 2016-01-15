@@ -9,14 +9,14 @@ refreshed (this is a bug and they are working on fixing it).
 
 Addons Included:
 
-* [ember-cli-bootstrap-sassy](https://github.com/lifegadget/ember-cli-bootstrap-sassy)
-* [ember-cli-mirage](https://github.com/samselikoff/ember-cli-mirage)
-* [ember-cli-sass-pods](https://github.com/DudaDev/ember-cli-sass-pods)
-* [ember-cli-autoprefixer](https://github.com/kimroen/ember-cli-autoprefixer)
-* [ember-moment](https://github.com/stefanpenner/ember-moment)
-* [ember-simple-auth](https://github.com/simplabs/ember-simple-auth)
-* [ember-cli-selectize](https://github.com/miguelcobain/ember-cli-selectize)
-* [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers)
+* [ember-cli-bootstrap-sassy](https://github.com/lifegadget/ember-cli-bootstrap-sassy) - bootstrap css/js framework
+* [ember-cli-mirage](https://github.com/samselikoff/ember-cli-mirage) - Server mocking
+* [ember-cli-sass-pods](https://github.com/DudaDev/ember-cli-sass-pods) - Sass comipling with pod structure
+* [ember-cli-autoprefixer](https://github.com/kimroen/ember-cli-autoprefixer) - CSS autoprefixer
+* [ember-moment](https://github.com/stefanpenner/ember-moment) - Date handling
+* [ember-simple-auth](https://github.com/simplabs/ember-simple-auth) - Authentication support
+* [ember-cli-selectize](https://github.com/miguelcobain/ember-cli-selectize) - Select box enhancements
+* [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers) - HTMLBars if helpers
 
 Other Addons (not installed by default):
 
