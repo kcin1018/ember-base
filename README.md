@@ -1,8 +1,31 @@
 # Ember-base
 
-This is the base Ember CLI frontend app for CCHMC.  It has bootstrap CSS/JS framework, moment.js,
-and bootstrap datetimepicker included by default.  It also includes ember-simple-auth for
-authentication and authorization.
+This is the base Ember CLI frontend app for CCHMC.  It defaults to using ember-data and the
+[JSONAPI Spec](http://jsonapi.org/).  It is configured with an api and testing framework
+to mock the authentication request.  You may configure the API endpoints for authentication
+in the config along with the host and namespace.  One caveat for the ember-cli-sass-pods is
+that you have to touch/save a file in the styes/ directory for the pod styles to be
+refreshed (this is a bug and they are working on fixing it).
+
+Addons Included:
+* [ember-cli-bootstrap-sassy](https://github.com/lifegadget/ember-cli-bootstrap-sassy)
+* [ember-cli-mirage](https://github.com/samselikoff/ember-cli-mirage)
+* [ember-cli-sass-pods](https://github.com/DudaDev/ember-cli-sass-pods)
+* [ember-cli-autoprefixer](https://github.com/kimroen/ember-cli-autoprefixer)
+* [ember-moment](https://github.com/stefanpenner/ember-moment)
+* [ember-simple-auth](https://github.com/simplabs/ember-simple-auth)
+* [ember-cli-selectize](https://github.com/miguelcobain/ember-cli-selectize)
+* [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers)
+
+Other Addons (not installed by default):
+* [liquid-fire](https://github.com/ember-animation/liquid-fire) - Animation/Transitions
+* [ember-notify](https://github.com/aexmachina/ember-notify) - Alert/Notifications
+
+You can find more by using [Ember Observer](http://emberobserver.com/)
+
+Included Transforms:
+* json - for json blob data
+* moment-date - for dates
 
 ## Prerequisites
 
@@ -16,6 +39,7 @@ You will need the following things properly installed on your computer.
 
 ## Starting Project based on this
 
+* Replace <app-directory> with the application name you would like
 * Create an empty project and initialize git (`mkdir <app-directory && cd <app-directory> && git init`)
 * Add remote origin to new repo (`git remote add origin <your-new-repo-url>`)
 * Add another remote for ember-base (`git remote add ember-base ssh://git@bmiatlasp.chmcres.cchmc.org:7999/ossdevel/ember-base.git`)
@@ -30,7 +54,7 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* `ember server`
+* `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
 ### Code Generators
@@ -58,4 +82,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-

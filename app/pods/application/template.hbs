@@ -1,0 +1,5 @@
+<h2 class="title">Welcome to Ember</h2>
+{{#if session.isAuthenticated}}
+<div class="text-center" {{action 'logout'}}>[<strong class="logout">Logout</strong>]</div>
+{{/if}}
+{{outlet}}
