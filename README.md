@@ -8,6 +8,7 @@ that you have to touch/save a file in the styes/ directory for the pod styles to
 refreshed (this is a bug and they are working on fixing it).
 
 Addons Included:
+
 * [ember-cli-bootstrap-sassy](https://github.com/lifegadget/ember-cli-bootstrap-sassy)
 * [ember-cli-mirage](https://github.com/samselikoff/ember-cli-mirage)
 * [ember-cli-sass-pods](https://github.com/DudaDev/ember-cli-sass-pods)
@@ -18,12 +19,14 @@ Addons Included:
 * [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers)
 
 Other Addons (not installed by default):
+
 * [liquid-fire](https://github.com/ember-animation/liquid-fire) - Animation/Transitions
 * [ember-notify](https://github.com/aexmachina/ember-notify) - Alert/Notifications
 
 You can find more by using [Ember Observer](http://emberobserver.com/)
 
 Included Transforms:
+
 * json - for json blob data
 * moment-date - for dates
 
