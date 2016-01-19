@@ -1,37 +1,38 @@
 import Mirage from 'ember-cli-mirage';
 import Config from 'ember-base/config/environment';
+import Ember from 'ember';
 
 export default function() {
-    this.urlPrefix = Config.api.host;    // make this `http://localhost:8080`, for example, if your API is on a different server
-    this.namespace = Config.api.namespace;    // make this `api`, for example, if your API is namespaced
-    this.timing = 400;      // delay for each request, automatically set to 0 during testing
+  this.urlPrefix = Config.api.host;    // make this `http://localhost:8080`, for example, if your API is on a different server
+  this.namespace = Config.api.namespace;    // make this `api`, for example, if your API is namespaced
+  this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
-    this.post('/' + Config.api.auth, (db, request) => {
-        let params = [];
-        if(!Ember.isEmpty(request.requestBody)) {
-            request.requestBody.split("&").forEach(function(part) {
-                let item = part.split("=");
-                params[item[0]] = item[1];
-            });
-        }
+  this.post(`/${Config.api.auth}`, (db, request) => {
+    let params = [];
+    if (!Ember.isEmpty(request.requestBody)) {
+      request.requestBody.split('&').forEach(function(part) {
+        let item = part.split('=');
+        params[item[0]] = item[1];
+      });
+    }
 
-        let user = db.users.where({username: params['identification']});
-        if(user.length) {
-            return {
-                token: '2389h87g54bg2893bg23b23gf23',
-                user_id: user[0].id
-            };
-        } else {
-            return {
-                error: true,
-                message: 'Invalid username or password'
-            };
-        }
-    });
+    let user = db.users.where({ username: params.identification });
+    if (user.length) {
+      return {
+        token: '2389h87g54bg2893bg23b23gf23',
+        user_id: user[0].id
+      };
+    } else {
+      return {
+        error: true,
+        message: 'Invalid username or password'
+      };
+    }
+  });
 
-    this.delete('/' + Config.api.auth, () => {
-        return new Mirage.Response(204, {}, {});
-    });
+  this.delete(`/${Config.api.auth}`, () => {
+    return new Mirage.Response(204, {}, {});
+  });
 
   // These comments are here to help you get started. Feel free to delete them.
 

@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
-const {inject} = Ember;
+const { inject } = Ember;
 
 export default Ember.Controller.extend({
-    session: inject.service('session'),
+  session: inject.service('session'),
 
-    actions: {
-        logout() {
-            this.get('session').invalidate();
-        }
+  actions: {
+    logout() {
+      this.get('session').invalidate();
     }
+  }
 });

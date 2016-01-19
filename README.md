@@ -17,6 +17,8 @@ Addons Included:
 * [ember-simple-auth](https://github.com/simplabs/ember-simple-auth) - Authentication support
 * [ember-cli-selectize](https://github.com/miguelcobain/ember-cli-selectize) - Select box enhancements
 * [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers) - HTMLBars if helpers
+* [ember-suave](https://github.com/dockyard/ember-suave/) - Code style guide
+
 
 Other Addons (not installed by default):
 
