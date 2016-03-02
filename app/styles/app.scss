@@ -1,3 +1,13 @@
 @import 'bootstrap';
 @import "bootstrap/theme";
-@import "pods"
+@import "pods";
+
+.title {
+    text-align: center;
+    color: $brand-primary;
+}
+
+.logout {
+    color: $brand-danger;
+    cursor: pointer;
+}

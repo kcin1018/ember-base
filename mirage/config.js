@@ -7,7 +7,7 @@ export default function() {
   this.namespace = Config.api.namespace;    // make this `api`, for example, if your API is namespaced
   this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
-  this.post(`/${Config.api.auth}`, (db, request) => {
+  this.post(`/${Config.api.auth}`, (schema, request) => {
     let params = [];
     if (!Ember.isEmpty(request.requestBody)) {
       request.requestBody.split('&').forEach(function(part) {
@@ -16,7 +16,7 @@ export default function() {
       });
     }
 
-    let user = db.users.where({ username: params.identification });
+    let user = schema.user.where({ username: params.identification });
     if (user.length) {
       return {
         token: '2389h87g54bg2893bg23b23gf23',
@@ -30,9 +30,7 @@ export default function() {
     }
   });
 
-  this.delete(`/${Config.api.auth}`, () => {
-    return new Mirage.Response(204, {}, {});
-  });
+  this.delete(`/${Config.api.auth}`, {}, 204);
 
   // These comments are here to help you get started. Feel free to delete them.
 

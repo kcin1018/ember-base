@@ -10,20 +10,20 @@ refreshed (this is a bug and they are working on fixing it).
 Addons Included:
 
 * [ember-cli-bootstrap-sassy](https://github.com/lifegadget/ember-cli-bootstrap-sassy) - bootstrap css/js framework
-* [ember-cli-mirage](https://github.com/samselikoff/ember-cli-mirage) - Server mocking
-* [ember-cli-sass-pods](https://github.com/DudaDev/ember-cli-sass-pods) - Sass comipling with pod structure
+* [ember-cli-mirage BETA](https://github.com/samselikoff/ember-cli-mirage) - Server mocking
+* [ember-cli-sass](https://github.com/aexmachina/ember-cli-sass) - Sass css comipling
 * [ember-cli-autoprefixer](https://github.com/kimroen/ember-cli-autoprefixer) - CSS autoprefixer
 * [ember-moment](https://github.com/stefanpenner/ember-moment) - Date handling
-* [ember-simple-auth](https://github.com/simplabs/ember-simple-auth) - Authentication support
-* [ember-cli-selectize](https://github.com/miguelcobain/ember-cli-selectize) - Select box enhancements
+* [ember-simple-auth BETA](https://github.com/simplabs/ember-simple-auth) - Authentication support
 * [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers) - HTMLBars if helpers
 * [ember-suave](https://github.com/dockyard/ember-suave/) - Code style guide
 
 
 Other Addons (not installed by default):
 
+* [ember-power-select](https://github.com/cibernox/ember-power-select) - Select Box Implementation
 * [liquid-fire](https://github.com/ember-animation/liquid-fire) - Animation/Transitions
-* [ember-notify](https://github.com/aexmachina/ember-notify) - Alert/Notifications
+* [ember-cli-flash](https://github.com/poteto/ember-cli-flash) - Alert/Notifications
 
 You can find more by using [Ember Observer](http://emberobserver.com/)
 
