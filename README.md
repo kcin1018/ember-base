@@ -24,6 +24,10 @@ Other Addons (not installed by default):
 * [ember-power-select](https://github.com/cibernox/ember-power-select) - Select Box Implementation
 * [liquid-fire](https://github.com/ember-animation/liquid-fire) - Animation/Transitions
 * [ember-cli-flash](https://github.com/poteto/ember-cli-flash) - Alert/Notifications
+* [ember-font-awesome](https://github.com/martndemus/ember-font-awesome) - Icons
+* [ember-composable-helpers](https://github.com/DockYard/ember-composable-helpers) - Common template helpers
+* [ember-route-action-helper](https://github.com/DockYard/ember-route-action-helper) - Send actions to route instead of controller
+
 
 You can find more by using [Ember Observer](http://emberobserver.com/)
 
