@@ -16,7 +16,7 @@ export default function() {
       });
     }
 
-    let user = schema.user.where({ username: params.identification });
+    let user = schema.db.users.where({ username: params.identification });
     if (user.length) {
       return {
         token: '2389h87g54bg2893bg23b23gf23',
