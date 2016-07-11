@@ -1,5 +1,6 @@
 {
   "preset": "ember-suave",
   "requireCamelCaseOrUpperCaseIdentifiers": false,
-  "requireSpread": false
+  "requireSpread": false,
+  "disallowDirectPropertyAccess": false
 }

@@ -1,4 +1,3 @@
-import Mirage from 'ember-cli-mirage';
 import Config from 'ember-base/config/environment';
 import Ember from 'ember';
 
